@@ -2,7 +2,7 @@ public class TraversalPractice {
     /**
      * Prints the values of the leaf nodes of a tree.
      * 
-     * Values are printed from the leftmost leaf to the rightmost. Each value is
+     * Valtues are printed from the leftmos leaf to the rightmost. Each value is
      * printed on a new line.
      * 
      * If the input node is null, nothing is printed.
@@ -30,6 +30,14 @@ public class TraversalPractice {
      * @param node the root of the tree
      */
     public static void printLeafNodes(TreeNode node) {
+        if (node == null)return;
+
+        if (node.left == null && node.right == null){
+            System.out.println(node.data);
+        }
+
+        printLeafNodes(node.left);
+        printLeafNodes(node.right);
 
     }
 }
