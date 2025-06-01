@@ -30,6 +30,13 @@ public class TraversalPractice {
      * @param node the root of the tree
      */
     public static void printLeafNodes(TreeNode node) {
+        if(node == null) return;
 
+        TreeNode current = node;
+        if(current.left == null && current.right == null) {
+           System.out.println(current.data);
+        }
+        printLeafNodes(current.left);
+        printLeafNodes(current.right);
     }
 }
